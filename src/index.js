@@ -8,13 +8,11 @@ nodes.forEach(function (node) {
   var foldOnInit = !!node.parentNode.getAttribute('data-path').match(/postcss\.css|bundle\.js/)
   var foldButton = Elm.FoldButton.embed(node, foldOnInit)
 
-  foldButton.ports.fold.subscribe(function () {
-    var code = node.parentNode.parentNode.querySelector('.blob-wrapper')
-    code.style.display = 'none'
-  })
+  var display = function (value) {
+    var codeNode = this.parentNode.parentNode.querySelector('.blob-wrapper')
+    codeNode.style.display = value
+  }
 
-  foldButton.ports.unfold.subscribe(function () {
-    var code = node.parentNode.parentNode.querySelector('.blob-wrapper')
-    code.style.display = 'block'
-  })
+  foldButton.ports.fold.subscribe(display.bind(node, 'none'))
+  foldButton.ports.unfold.subscribe(display.bind(node, 'block'))
 })
