@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>FoldButton</title>
+  <script src="fold_button.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <div class="fold-button"></div>
+  <div class="fold-button"></div>
+  <div class="fold-button"></div>
+  <div class="fold-button"></div>
+
+  <script type="text/javascript">
+    (function () {
+      var nodes = Array.prototype.slice.call(document.querySelectorAll('.fold-button'))
+      nodes.forEach(function (node) {
+        Elm.FoldButton.embed(node)
+      })
+    }())
+  </script>
+</body>
+</html>
