@@ -1,6 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Github fold",
+  "description": "Collapse/expand button for code blobs on Github.com",
   "version": "1.0.0",
 
   "permissions": ["*://github.com/*"],
