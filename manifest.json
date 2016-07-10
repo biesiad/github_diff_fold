@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "Github fold",
+  "version": "1.0.0",
+
+  "permissions": ["*://github.com/*"],
+
+  "content_scripts": [{
+    "matches": ["*://github.com/*/pull/*/files"],
+    "js": [
+      "build/github_fold.js"
+    ]
+  }]
+}

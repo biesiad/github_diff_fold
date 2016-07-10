@@ -1,29 +1,14 @@
-var path = require("path");
-
 module.exports = {
-  entry: {
-    app: [ './src/index.js' ]
-  },
-
-  output: {
-    filename: './build/github_fold.js',
-  },
-
+  entry: { github_fold: './src/index.js' },
+  output: { filename: './build/[name].js', },
   module: {
     loaders: [
-      {
-        test:    /\.elm$/,
-        exclude: [/elm-stuff/, /node_modules/],
-        loader:  'elm-webpack',
-      },
+      { test: /\.elm$/, exclude: [/elm-stuff/, /node_modules/], loader:  'elm-webpack', }
     ],
-
     noParse: /\.elm$/,
   },
-
   devServer: {
     inline: true,
-    stats: { colors: true },
-  },
-
-};
+    stats: { colors: true }
+  }
+}
