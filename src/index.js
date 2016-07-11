@@ -13,6 +13,5 @@ nodes.forEach(function (node) {
     codeNode.style.display = value
   }
 
-  foldButton.ports.fold.subscribe(display.bind(node, 'none'))
-  foldButton.ports.unfold.subscribe(display.bind(node, 'block'))
+  foldButton.ports.setDisplay.subscribe(display.bind(node))
 })
