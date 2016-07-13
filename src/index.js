@@ -6,15 +6,16 @@ var createFoldButtons = function () {
   var nodes = Array.prototype.slice.call(document.querySelectorAll('.file-actions'))
 
   nodes.forEach(function (node) {
-    var foldOnInit = !!node.parentNode.getAttribute('data-path').match(/postcss\.css|bundle\.js/)
-    var foldButton = Elm.FoldButton.embed(node, foldOnInit)
+    var path = node.parentNode.getAttribute('data-path')
+    var foldOnInit = path.match(/postcss\.css|bundle\.js/) && !path.match(/shared/)
+    var codeBlob = node.parentNode.parentNode.querySelector('.blob-wrapper')
 
-    var display = function (value) {
-      var codeNode = this.parentNode.parentNode.querySelector('.blob-wrapper')
-      codeNode.style.display = value
+    if (codeBlob) {
+      var foldButton = Elm.FoldButton.embed(node, !!foldOnInit)
+      foldButton.ports.setDisplay.subscribe(function (value) {
+        codeBlob.style.display = value
+      })
     }
-
-    foldButton.ports.setDisplay.subscribe(display.bind(node))
   })
 }
 
