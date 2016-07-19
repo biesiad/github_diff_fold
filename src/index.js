@@ -1,4 +1,5 @@
-'use strict';
+require('file?name=./build/[name].[ext]!./manifest.json')
+require('file?name=./build/[name].[ext]!./options.html')
 
 var Elm = require('./fold_button.elm');
 

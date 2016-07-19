@@ -3,13 +3,14 @@
   "name": "Github fold",
   "description": "Collapse/expand button for code blobs on Github.com",
   "version": "1.0.0",
+  "options_page": "options.html",
   "content_scripts": [{
     "matches": [
       "*://github.com/*/pull*",
       "*://github.com/*/commit/*"
     ],
     "js": [
-      "build/github_fold.js"
+      "github_fold.js"
     ]
   }]
 }
