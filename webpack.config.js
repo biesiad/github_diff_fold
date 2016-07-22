@@ -1,5 +1,7 @@
 module.exports = {
-  entry: { github_fold: './src/index.js' },
+  entry: {
+    content_scripts: './src/content_scripts.js'    
+  },
   output: { filename: './build/[name].js', },
   module: {
     loaders: [

@@ -9,8 +9,6 @@
       "*://github.com/*/pull*",
       "*://github.com/*/commit/*"
     ],
-    "js": [
-      "github_fold.js"
-    ]
+    "js": [ "content_scripts.js" ]
   }]
 }

@@ -1,7 +1,6 @@
 require('file?name=./build/[name].[ext]!./manifest.json')
-require('file?name=./build/[name].[ext]!./options.html')
 
-var Elm = require('./fold_button.elm');
+var Elm = require('./FoldButton.elm');
 
 var createFoldButtons = function () {
   var nodes = Array.prototype.slice.call(document.querySelectorAll('.file-actions'))
