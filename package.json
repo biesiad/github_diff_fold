@@ -1,6 +1,7 @@
 {
   "scripts": {
-     "hot": "webpack && webpack-dev-server ./src/options.js --open --hot --inline"
+    "hot": "webpack && webpack-dev-server ./src/options.js --open --hot --inline",
+    "watch": "webpack -w"
   },
   "dependencies": {
     "elm-webpack-loader": "^3.0.3",
