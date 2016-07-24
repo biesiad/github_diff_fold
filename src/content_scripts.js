@@ -23,7 +23,7 @@ var createFoldButtons = function (regexes) {
   })
 }
 
-chrome.storage.local.get({ values: [] }, function (data) {
+chrome.storage.sync.get({ values: [] }, function (data) {
   document.addEventListener('pjax:success', createFoldButtons.bind(null, data.values), false)
   createFoldButtons(data.values)
 })

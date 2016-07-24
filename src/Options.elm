@@ -61,7 +61,7 @@ view : Model -> Html Msg
 view model =
   div [ class "container" ]
     [ Html.img [ src "icon.png", class "icon" ] []
-    , h2 [] [ text "Github fold" ]
+    , h2 [] [ text "Github diff fold" ]
     , p [ class "small" ]
       [ text "Select files collapsed by default, use RegExp e.g. "
       , span [ class "code" ] [ text "/^.+postcss.css$/" ]
