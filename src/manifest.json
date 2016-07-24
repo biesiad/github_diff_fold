@@ -4,6 +4,7 @@
   "description": "Collapse/expand button for code blobs on Github.com",
   "version": "1.0.0",
   "options_page": "options.html",
+  "permissions": [ "storage" ],
   "content_scripts": [{
     "matches": [
       "*://github.com/*/pull*",
