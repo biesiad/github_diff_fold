@@ -1,6 +1,7 @@
 module.exports = {
   entry: {
-    content_scripts: './src/content_scripts.js'    
+    content_scripts: './src/content_scripts.js',
+    options: './src/options.js'
   },
   output: { filename: './build/[name].js', },
   module: {
